@@ -6,13 +6,14 @@
 
 <%= render partial: 'signin', :locals => {posts: @posts} %>
 <%= render partial: 'form'%>
-<%= render partial: 'show'%>
+
 
   <div class = "container" id = "returnpost">
     <% @posts.each_slice(4) do |post| %>
       <div class = "row">
         <% post.each do |img| %>
           <%= render partial: "post", :locals => {:img => img}%>
+          <%= render partial: 'show', :locals => {:img => img}%>
         <% end %>
       </div>
     <% end %>
