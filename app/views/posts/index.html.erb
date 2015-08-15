@@ -1,27 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Posts</h1>
+<div class = "hometitle">
+  <h1>Surely You Must Love Gifs</h1>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Gif</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= render partial: 'signin', :locals => {posts: @posts} %>
+<%= render partial: 'form'%>
+<%= render partial: 'show'%>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.gif %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <div class = "container" id = "returnpost">
+    <% @posts.each_slice(4) do |post| %>
+      <div class = "row">
+        <% post.each do |img| %>
+          <%= render partial: "post", :locals => {:img => img}%>
+        <% end %>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+    <%= link_to "New Post", "#formModal", remote: true, "data-toggle" => "modal", "data-target" => "#formModal" %>
+  </div>

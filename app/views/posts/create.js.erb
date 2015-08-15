@@ -1,0 +1,2 @@
+$("#formModal").modal('hide');
+$("#returnpost").prepend("<%=escape_javascript(render :partial => 'post', :locals => {:img => @post} )%>");
