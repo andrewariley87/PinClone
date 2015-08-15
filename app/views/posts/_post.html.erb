@@ -1,0 +1,6 @@
+<div class = "col-xs-3">
+  <%= link_to(image_tag(img.gif, class: "img-responsive"), img),"data-toggle" => "modal", "data-target" => "#showpost" %>
+  <%= link_to 'Show', img %>
+  <%= link_to 'Edit', edit_post_path(img) %>
+  <%= link_to 'Destroy', img, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

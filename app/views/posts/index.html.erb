@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<div class = "hometitle">
+  <h1>Surely You Must Love Gifs</h1>
+</div>
+
+<%= render partial: 'signin', :locals => {posts: @posts} %>
+<%= render partial: 'form'%>
+<%= render partial: 'show'%>
+
+  <div class = "container" id = "returnpost">
+    <% @posts.each_slice(4) do |post| %>
+      <div class = "row">
+        <% post.each do |img| %>
+          <%= render partial: "post", :locals => {:img => img}%>
+        <% end %>
+      </div>
+    <% end %>
+    <%= link_to "New Post", "#formModal", remote: true, "data-toggle" => "modal", "data-target" => "#formModal" %>
+  </div>
