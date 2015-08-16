@@ -6,6 +6,7 @@
 
 <%= render partial: 'signin', :locals => {posts: @posts} %>
 <%= render partial: 'form'%>
+<%= render partial: 'newpost' %>
 
 
   <div class = "container" id = "returnpost">
@@ -17,5 +18,4 @@
         <% end %>
       </div>
     <% end %>
-    <%= link_to "New Post", "#formModal", remote: true, "data-toggle" => "modal", "data-target" => "#formModal" %>
   </div>
