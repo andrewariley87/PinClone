@@ -56,7 +56,7 @@ hr.small {
   background-size: cover;
   -o-background-size: cover;
   margin-bottom: 50px;
-  background-image: url(Airplane.jpg);
+  background-image: img_path("Airplane.jpg");
 }
 .intro-header .site-heading,
 .intro-header .post-heading,
