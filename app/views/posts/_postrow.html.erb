@@ -1,6 +1,8 @@
-<div class = "row">
-  <% post.each do |img| %>
-    <%= render partial: "post", :locals => {:img => img}%>
-    <%= render partial: 'show', :locals => {:img => img}%>
-  <% end %>
-</div>
+<% @posts.each_slice(4) do |post| %>
+  <div class = "row">
+    <% post.each do |img| %>
+      <%= render partial: 'show', :locals => {:img => img}%>
+      <%= render partial: "post", :locals => {:img => img}%>
+    <% end %>
+  </div>
+<% end %>
