@@ -1,2 +1,2 @@
 $("#formModal").modal('hide');
-$("#returnpost").prepend("<%=escape_javascript(render :partial => 'postrow', :locals => {:post => @posts} )%>");
+$("#returnpost").prepend("<%=escape_javascript(render :partial => 'postrow', :locals => {:post => [@post]} )%>");

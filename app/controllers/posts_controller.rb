@@ -27,10 +27,8 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @allposts = Post.all
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @posts = @allposts << @post
     respond_to do |format|
       if @post.save
         format.json { render :show, status: :created, location: @post }
