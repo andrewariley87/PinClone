@@ -1,0 +1,2 @@
+$("#showpost<%= img.id %>").modal('hide');
+$("showpost<%= img.id %>").html("<%=escape_javascript(render :partial => 'show', :locals => {:img => @post} )%>");

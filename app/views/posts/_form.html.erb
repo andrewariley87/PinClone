@@ -23,6 +23,8 @@
       <div class = "col-xs-10" id = "postform">
         <div class="field">
           <%= f.text_field :gif %>
+          <h6><em>or</em></h6>
+          <%= f.attachment_field :gif_image %>
         </div>
         <div class="actions">
           <%= f.submit %>
