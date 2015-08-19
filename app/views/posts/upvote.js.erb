@@ -1,2 +1,3 @@
-$("#showpost<%= img.id %>").modal('hide');
-$("showpost<%= img.id %>").html("<%=escape_javascript(render :partial => 'show', :locals => {:img => @post} )%>");
+$("#voteLogic").html("<%=escape_javascript(render :partial => 'voting', :locals => {:img => @post} )%>");
+$("#returnpost").html("<%=escape_javascript(render :partial => 'postrow', :locals => {:post => Post.all} )%>");
+$('#showpost').modal('hide');
