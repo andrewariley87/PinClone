@@ -7,16 +7,14 @@
       </div>
       <div class="modal-body">
               <% if img.gif_image.blank? %>
-                <p> <%= image_tag(img.gif, class: "img-responsive") %></p>
+                <p> <%= image_tag(img.gif, class: "img-responsive center-block") %></p>
               <% else %>
                 <p> <%= image_tag attachment_url(img, :gif_image) %> </p>
               <% end %>
               <p> Author: <%= img.user.email %> </p>
               <p> URL: <%= img.gif %> </p>
               <p> Created at: <%= img.created_at.strftime('%B %d, %Y') %> </p>
-              <% if current_user %>
-                <p> <%= button_to "Like", upvote_post_path(img)%> <%= img.get_upvotes.size - img.get_downvotes.size%>  <%= button_to "Dislike", downvote_post_path(img)%></p>
-              <% end %>
+              <%= render partial: "voting", :locals => {img: img} %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
