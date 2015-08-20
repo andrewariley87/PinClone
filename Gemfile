@@ -21,6 +21,7 @@ gem 'refile-postgres'
 gem 'figaro'
 gem 'capybara'
 gem 'poltergeist', :group => :test, :require => 'capybara/poltergeist'
+gem "refile-s3"
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
