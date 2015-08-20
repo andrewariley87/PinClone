@@ -18,6 +18,7 @@ gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
 gem 'remotipart', '~> 1.2'
 gem 'refile-postgres'
+gem 'figaro'
 gem 'capybara'
 gem 'poltergeist', :group => :test, :require => 'capybara/poltergeist'
 # Use Uglifier as compressor for JavaScript assets
